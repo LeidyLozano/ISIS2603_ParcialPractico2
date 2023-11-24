@@ -1,0 +1,27 @@
+<div class="container-fluid">
+
+  <div class="selected-curso rounded" *ngIf="selected">
+    <app-cursos-detail [cursoDetail]="selectedCurso"></app-cursos-detail>
+  </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Plataforma</th>
+      <th scope="col">Lanzamiento</th>
+      <th scope="col">Duración</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let curso of cursos">
+      <th scope="row">{{curso.id}}</th>
+      <td>{{curso.title}}</td>
+      <td>{{curso.platform}}</td>
+      <td>{{curso.launch_year}}</td>
+      <td>{{curso.duration_hours}}</td>
+    </tr>
+  </tbody>
+</table>
+<p>Los cursos {{certificates}} ofrecen certificado</p>
+</div>
