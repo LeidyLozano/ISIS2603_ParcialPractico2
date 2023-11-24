@@ -19,7 +19,9 @@ export class CursosListComponent implements OnInit {
   constructor(private cursoService: CursoService) { }
 
   getCursos(): void {
-    this.cursoService.GetCursos().subscribe({next: apiData => this.cursos = apiData , error: e => console.error(e)});
+    this.cursoService.getCursos().subscribe((cursos) => {
+      this.cursos = cursos;
+    });
   }
 
   onSelected(book: Curso): void {
@@ -28,7 +30,7 @@ export class CursosListComponent implements OnInit {
   }
 
   getCertificates(): void {
-    this.cursoService.GetCursos()
+    this.cursoService.getCursos()
   }
 
 

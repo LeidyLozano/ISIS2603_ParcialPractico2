@@ -1,27 +1,35 @@
 <div class="container-fluid">
-
-  <div class="selected-curso rounded" *ngIf="selected">
-    <app-cursos-detail [cursoDetail]="selectedCurso"></app-cursos-detail>
+  <div class="col-6">
+    <table class="table table-striped">
+      <caption id="avg-seasons">Seasons average</caption>
+      <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Plataforma</th>
+            <th scope="col">Lanzamiento</th>
+            <th scope="col">Duración (h)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of cursos">
+            <td>
+              <dd>{{c.id}}</dd>
+            </td>
+            <td>
+              <dd>{{c.title}}</dd>
+            </td>
+            <td>
+              <dd>{{c.platform}}</dd>
+            </td>
+            <td>
+              <dd>{{c.launch_year}}</dd>
+            </td>
+            <td>
+              <dd>{{c.duration_hours}}</dd>
+            </td>
+        </tr>
+        </tbody>
+    </table>
   </div>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Plataforma</th>
-      <th scope="col">Lanzamiento</th>
-      <th scope="col">Duración</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let curso of cursos">
-      <th scope="row">{{curso.id}}</th>
-      <td>{{curso.title}}</td>
-      <td>{{curso.platform}}</td>
-      <td>{{curso.launch_year}}</td>
-      <td>{{curso.duration_hours}}</td>
-    </tr>
-  </tbody>
-</table>
-<p>Los cursos {{certificates}} ofrecen certificado</p>
 </div>
