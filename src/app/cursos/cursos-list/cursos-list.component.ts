@@ -13,7 +13,7 @@ export class CursosListComponent implements OnInit {
   selectedCurso! : Curso;
   selected = false;
   cursos: Array<Curso> = [];
-  certificates: Array<number> = [];
+  certificates: string = "";
 
 
   constructor(private cursoService: CursoService) { }
@@ -21,6 +21,11 @@ export class CursosListComponent implements OnInit {
   getCursos(): void {
     this.cursoService.getCursos().subscribe((cursos) => {
       this.cursos = cursos;
+      cursos.forEach((curso) =>{
+        if(curso.offers_certificate)
+      {
+        this.certificates += String(curso.id) + ','
+      }} )
     });
   }
 
