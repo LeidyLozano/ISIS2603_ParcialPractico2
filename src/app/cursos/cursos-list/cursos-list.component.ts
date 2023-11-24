@@ -12,6 +12,7 @@ export class CursosListComponent implements OnInit {
 
   selectedCurso! : Curso;
   selected = false;
+  certificated = false;
   cursos: Array<Curso> = [];
   certificates: string = "";
 
@@ -29,9 +30,12 @@ export class CursosListComponent implements OnInit {
     });
   }
 
-  onSelected(book: Curso): void {
+  onSelected(curso: Curso): void {
     this.selected = true;
-    this.selectedCurso = book;
+    this.selectedCurso = curso;
+    if(curso.offers_certificate){
+      this.certificated = true
+    }
   }
 
   getCertificates(): void {

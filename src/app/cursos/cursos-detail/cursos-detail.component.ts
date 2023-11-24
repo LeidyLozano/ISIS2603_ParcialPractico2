@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CursoDetail } from '../curso-detail';
+import { Curso } from '../curso';
 
 @Component({
   selector: 'app-cursos-detail',
@@ -8,7 +8,7 @@ import { CursoDetail } from '../curso-detail';
 })
 export class CursosDetailComponent implements OnInit {
 
-  @Input() cursosDetail!: CursoDetail;
+  @Input() cursosDetail!: Curso;
   constructor() { }
 
   ngOnInit() {

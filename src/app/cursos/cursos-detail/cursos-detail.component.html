@@ -1,2 +1,22 @@
-
+<div class="container-fluid">
+  <p class="h3 p-3">{{ cursosDetail.title }}</p>
+  <div class="row">
+    <div class="col-2">
+      <div class="thumb">
+        <img
+          class="img-fluid"
+          src="{{ cursosDetail.image }}"
+          alt="{{ cursosDetail.title }}"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <dl>
+        <dt class="bold">Description</dt>
+        <dd>{{ cursosDetail.description }}</dd>
+      </dl>
+    </div>
+    <div *ngIf="cursosDetail.offers_certificate">¡Si ofrece certificado!</div>
+  </div>
+ </div>
 
